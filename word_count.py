@@ -47,15 +47,11 @@ def mapper(sequence): #mapreduce en diferentes nodos del cluster
         words = text.split() # dividir el texto palabra por palabra
         for word in words: ## for para recorrer los elementos de la lista
             word = word.replace(",","")
-            word = word.replace(",","")
+            word = word.replace(".","")
             word = word.lower()
             new_sequence.append((word,1))
     return new_sequence
         
-
-
-
-
 #
 # Escriba la función shuffle_and_sort que recibe la lista de tuplas entregada
 # por el mapper, y retorna una lista con el mismo contenido ordenado por la
@@ -71,11 +67,6 @@ def mapper(sequence): #mapreduce en diferentes nodos del cluster
 def shuffle_and_sort(sequence): ## ordena los pares
     sorted_sequence = sorted(sequence, key=lambda x: x[0])  ##sorted ordena los elementos de la lista
     return sorted_sequence
-
-
-
-
-
 #
 # Escriba la función reducer, la cual recibe el resultado de shuffle_and_sort y
 # reduce los valores asociados a cada clave sumandolos. Como resultado, por
