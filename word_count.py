@@ -122,12 +122,12 @@ def save_output(output_directory, sequence):
 # entregado como parámetro.
 #
 def create_marker(output_directory):
-    with open(output_directory+"/_SUCCES","w") as file:
+    with open(output_directory+"/_SUCCESS","w") as file:
         file.write("")
 #
 # Escriba la función job, la cual orquesta las funciones anteriores.
 #
-def job(input_directory, output_directory):
+def job(input_directory,output_directory):
     sequence = load_input(input_directory)
     sequence = mapper(sequence)
     sequence = shuffle_and_sort(sequence)
@@ -140,4 +140,4 @@ if __name__ == "__main__":
     job(
         "input",
         "output",
-)
+    )
