@@ -48,6 +48,7 @@ def mapper(sequence): #mapreduce en diferentes nodos del cluster
         for word in words: ## for para recorrer los elementos de la lista
             word = word.replace(",","")
             word = word.replace(",","")
+            word = word.lower()
             new_sequence.append((word,1))
     return new_sequence
         
